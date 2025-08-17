@@ -1,0 +1,14 @@
+[
+  {
+    "text": "All cats are animals. Some animals are dogs. Therefore, all cats are dogs.",
+    "answers": ["True", "False", "Cannot Say"],
+    "correct": "False",
+    "explanation": "The statement confuses 'all' with 'some'."
+  },
+  {
+    "text": "Some books are novels. All novels are fiction. Therefore, all books are fiction.",
+    "answers": ["True", "False", "Cannot Say"],
+    "correct": "False",
+    "explanation": "Not all books are novels, so we cannot say all books are fiction."
+  }
+]
