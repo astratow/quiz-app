@@ -1,0 +1,66 @@
+* Projekt: Gra do nauki Verbal Reasoning
+  Edukacyjna aplikacja webowa (Vue + Tailwind), pozwalająca trenować umiejętności verbal reasoning
+  poprzez quizy z różnymi typami pytań.
+
+** Cele
+- [X] Stworzyć interaktywną grę quizową w przeglądarce.
+- [X] Zbudować bazę pytań (JSON).
+- [ ] Zapewnić różne tryby gry (trening, quiz na czas, wyzwanie).
+- [ ] Udostępnić aplikację w internecie (np. Netlify/GitHub Pages).
+
+** Użytkownicy
+- Studenci przygotowujący się do egzaminów (SAT, GMAT, matura, UKCAT).
+- Uczniowie chcący poprawić umiejętności logicznego czytania i wnioskowania.
+
+** Zakres
+*** Minimum Viable Product (MVP)
+- [X] Ekran startowy z wyborem trybu gry.
+- [X] Komponent pytania:
+  - [X] Tekst + pytanie.
+  - [X] Odpowiedzi w formie przycisków.
+- [X] Feedback po udzieleniu odpowiedzi (poprawna/niepoprawna).
+- [X] Podsumowanie wyników.
+- [X] Pytania trzymane lokalnie w JSON.
+
+*** Rozszerzenia (opcjonalne)
+- [X] Tryb na czas.
+- [ ] System punktów i poziomów.
+- [ ] Rankingi (lokalne / globalne).
+- [ ] Profile użytkowników.
+- [ ] Eksport wyników (CSV/PDF).
+- [ ] Tryb multiplayer.
+
+** Technologia
+- Frontend: Vue 3 (Composition API).
+- UI: Tailwind CSS.
+- Dane: JSON (na start).
+- Hosting: Netlify lub GitHub Pages.
+
+** Harmonogram
+*** Etap 1: Planowanie i prototyp (1-2 tygodnie)
+- [X] Przygotować strukturę pytań w JSON.
+- [X] Zbudować szkielet aplikacji w Vue.
+- [X] Wyświetlanie pytań i sprawdzanie odpowiedzi.
+
+*** Etap 2: MVP (2-3 tygodnie)
+- [X] Dodanie ekranów (start, quiz, wynik).
+- [X] Implementacja feedbacku.
+- [X] Podstawowy system punktów.
+- [ ] Publikacja na Netlify.
+
+*** Etap 3: Rozwój (4-6 tygodni)
+- [X] Timer, poziomy trudności.
+- [ ] Rankingi.
+- [ ] Rozbudowa bazy pytań.
+- [ ] Integracja z backendem (opcjonalnie).
+
+** Materiały
+- Zestawy przykładowych pytań verbal reasoning.
+- Repozytorium Git (np. GitHub/GitLab).
+- Dokumentacja projektu w org-mode.
+
+** Status
+- DONE Plan projektu (org-mode)
+- DONE Struktura pytań JSON
+- DONE Szkielet aplikacji Vue
+- DONE Pierwsze pytania testowe
