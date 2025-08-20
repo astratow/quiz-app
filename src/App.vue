@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import Question from "./components/Question.vue";
 import groups from "./data/questions.json";
 import StartScreen from "./components/StartScreen.vue";
+import AnswerModal from "./components/AnswerModal.vue";
 
 interface QuestionData {
   type?: string;
@@ -138,13 +139,6 @@ const timeDisplay = computed(() => {
       >
         ← Back to Menu
       </button>
-      <!-- Instruction always visible -->
-      <div class="w-full max-w-2xl mb-6">
-        <div class="bg-white rounded-xl shadow p-6 mb-4">
-          <h2 class="text-xl font-bold mb-2">Instructions</h2>
-          <p class="whitespace-pre-line">{{ selectedGroup.instruction }}</p>
-        </div>
-      </div>
       <!-- Header with title and timer -->
       <div class="w-full max-w-4xl mb-6">
         <div class="flex justify-between items-center mb-4">
@@ -164,6 +158,13 @@ const timeDisplay = computed(() => {
             class="bg-blue-600 h-2 rounded-full transition-all duration-300" 
             :style="{ width: `${((index + 1) / questions.length) * 100}%` }"
           ></div>
+        </div>
+      </div>
+      <!-- Instruction always visible -->
+      <div class="w-full max-w-2xl mb-6">
+        <div class="bg-white rounded-xl shadow p-6 mb-4">
+          <h2 class="text-xl font-bold mb-2">Instructions</h2>
+          <p class="whitespace-pre-line">{{ selectedGroup.instruction }}</p>
         </div>
       </div>
       <!-- Question Component -->
@@ -186,6 +187,20 @@ const timeDisplay = computed(() => {
           <p class="text-red-600 font-semibold">⏰ Time's up!</p>
         </div>
       </div>
+
+       <!-- Score -->
+    <div class="mt-6">
+      <p class="font-semibold">Score: {{ score }}</p>
+    </div>
+     <!-- Score -->
+    <AnswerModal 
+
+      :visible="answered"
+      :is-correct="selectedAnswer === currentQuestion?.correct"
+      :explanation="currentQuestion?.explanation || ''"
+      :is-last="index + 1 >= questions.length"
+      @next="nextQuestion"
+    />
       <!-- Next button -->
       <button
         v-if="answered && currentQuestion"
