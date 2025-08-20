@@ -1,14 +1,77 @@
 [
   {
-    "text": "All cats are animals. Some animals are dogs. Therefore, all cats are dogs.",
-    "answers": ["True", "False", "Cannot Say"],
-    "correct": "False",
-    "explanation": "The statement confuses 'all' with 'some'."
+    "id": "same-letter-mc-set-1",
+    "instruction": "In these questions, the same letter must fit into both sets of brackets, to complete the word in front of the brackets and begin the word after brackets. Find this letter and mark it on the answer sheet.",
+    "example": {
+      "text": ["mea [?] able", "si[?] op"],
+      "options": ["A", "B", "C", "D", "E"],
+      "optionLetters": ["p", "n", "f", "t", "c"],
+      "correct": "t",
+      "explanation": "The four words are: meat, table, sit, top."
+    },
+    "questions": [
+      {
+        "type": "same-letter-mc",
+        "text": ["dis [?] urt", "muc [?] ole"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["p", "h", "e", "s", "k"],
+        "correct": "h",
+        "explanation": "dish, hurt, much, hole"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["sof [?] in", "bea [?] rap"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["d", "a", "t", "b", "w"],
+        "correct": "t",
+        "explanation": "soft, tin, beat, trap"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["ra [?] ain", "fo [?] oat"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["t", "d", "g", "s", "p"],
+        "correct": "g",
+        "explanation": "rag, gain, fog, goat"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["tra [?] awn", "bu [?] ellow"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["p", "d", "b", "s", "y"],
+        "correct": "y",
+        "explanation": "tray, yawn, buy, yellow"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["ea [?] an", "sor [?] une"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["v", "y", "t", "d", "g"],
+        "correct": "t",
+        "explanation": "eat, tan, sort, tune"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["lin [?] itten", "ran [?] ite"],
+        "options": ["A", "B", "C", "D", "E"],
+        "optionLetters": ["c", "m", "s", "n", "k"],
+        "correct": "k",
+        "explanation": "link, kitten, rank, kite"
+      }
+    ]
   },
   {
-    "text": "Some books are novels. All novels are fiction. Therefore, all books are fiction.",
-    "answers": ["True", "False", "Cannot Say"],
-    "correct": "False",
-    "explanation": "Not all books are novels, so we cannot say all books are fiction."
+    "id": "same-letter-mc-set-2",
+    "instruction": "In these questions, the same letter must fit into both sets of brackets, to complete the word in front of the brackets and begin the word after brackets. Find this letter and mark it on the answer sheet.",
+    "example": {
+      "text": ["mea [?] able", "si[?] op"],
+      "options": ["A", "B", "C", "D", "E"],
+      "optionLetters": ["p", "n", "f", "t", "c"],
+      "correct": "t",
+      "explanation": "The four words are: meat, table, sit, top."
+    },
+    "questions": [
+      
+    ]
   }
 ]
