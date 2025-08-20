@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import Question from "./components/Question.vue";
 import groups from "./data/questions.json";
+import StartScreen from "./components/StartScreen.vue";
 
 interface QuestionData {
   type?: string;
@@ -29,10 +30,10 @@ interface QuestionGroup {
 }
 
 type GameMode = 'practice' | 'timed';
-type AppScreen = 'start' | 'group-info' | 'quiz' | 'results';
+type AppScreen = 'start' | 'group-select' | 'group-info' | 'quiz' | 'results';
 
 const currentScreen = ref<AppScreen>('start');
-const gameMode = ref<GameMode>('practice');
+const gameMode = ref<GameMode | null>(null);
 const score = ref(0);
 const index = ref(0);
 const answered = ref(false);
@@ -40,27 +41,30 @@ const selectedAnswer = ref<string | null>(null);
 const currentQuestion = ref<QuestionData | null>(null);
 const timeLeft = ref(90); // seconds for timed mode
 const timeInterval = ref<number | null>(null);
-
 const selectedGroupIdx = ref<number | null>(null);
 const selectedGroup = computed(() =>
   selectedGroupIdx.value !== null ? (groups as QuestionGroup[])[selectedGroupIdx.value] : null
 );
 const questions = computed(() => selectedGroup.value ? selectedGroup.value.questions : []);
 
+function selectMode(mode: GameMode) {
+  gameMode.value = mode;
+  currentScreen.value = 'group-select';
+}
+
 function selectGroup(idx: number) {
   selectedGroupIdx.value = idx;
   currentScreen.value = 'group-info';
 }
 
-function startGame(mode: GameMode) {
-  gameMode.value = mode;
+function startGame() {
   currentScreen.value = 'quiz';
   score.value = 0;
   index.value = 0;
   answered.value = false;
   selectedAnswer.value = null;
   currentQuestion.value = questions.value.length > 0 ? questions.value[0] : null;
-  if (mode === 'timed') {
+  if (gameMode.value === 'timed') {
     startTimer();
   }
 }
@@ -132,6 +136,11 @@ function goToGroupInfo() {
   currentQuestion.value = null;
 }
 
+function handleModeSelected(mode: GameMode) {
+  gameMode.value = mode;
+  currentScreen.value = 'group-select';
+}
+
 const isTimedMode = computed(() => gameMode.value === 'timed');
 const timeDisplay = computed(() => {
   const minutes = Math.floor(timeLeft.value / 60);
@@ -143,9 +152,11 @@ const timeDisplay = computed(() => {
 
 <template>
   <div class="min-h-screen bg-gray-100">
-    <!-- Start Screen: Group Selection -->
-    <div v-if="currentScreen === 'start'" class="min-h-screen flex flex-col items-center justify-center p-6">
-      <h1 class="text-3xl font-bold mb-8">Select Question Set</h1>
+    <!-- Start Screen: Mode Selection -->
+    <StartScreen v-if="currentScreen === 'start'" @mode-selected="handleModeSelected" />
+    <!-- Group Selection Screen -->
+    <div v-else-if="currentScreen === 'group-select'" class="min-h-screen flex flex-col items-center justify-center p-6">
+      <h2 class="text-3xl font-bold mb-8">Select Question Set</h2>
       <div class="grid gap-6 w-full max-w-xl">
         <button
           v-for="(group, idx) in groups"
@@ -156,8 +167,8 @@ const timeDisplay = computed(() => {
           {{ group.instruction.substring(0, 80) }}<span v-if="group.instruction.length > 80">...</span>
         </button>
       </div>
+      <button class="mt-8 text-gray-500 underline" @click="currentScreen = 'start'">Back to Mode Selection</button>
     </div>
-
     <!-- Group Info Screen: Show instruction and example -->
     <div v-else-if="currentScreen === 'group-info' && selectedGroup" class="min-h-screen flex flex-col items-center justify-center p-6">
       <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl w-full mb-8">
@@ -174,12 +185,10 @@ const timeDisplay = computed(() => {
         <div class="text-gray-600 text-sm">{{ selectedGroup.example.explanation }}</div>
       </div>
       <div class="flex gap-4">
-        <button @click="currentScreen = 'start'" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 font-semibold">Back</button>
-        <button @click="startGame('practice')" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Start Practice</button>
-        <button @click="startGame('timed')" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold">Start Timed</button>
+        <button @click="currentScreen = 'group-select'" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 font-semibold">Back</button>
+        <button @click="startGame" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold">Start</button>
       </div>
     </div>
-
     <!-- Quiz Screen -->
     <div v-else-if="currentScreen === 'quiz' && selectedGroup" class="min-h-screen flex flex-col items-center justify-center p-6">
       <!-- Back to Menu Button -->
@@ -239,7 +248,6 @@ const timeDisplay = computed(() => {
         {{ index + 1 >= questions.length ? 'View Results' : 'Next Question' }}
       </button>
     </div>
-
     <!-- Results Screen -->
     <div v-else-if="currentScreen === 'results' && selectedGroup" class="min-h-screen flex items-center justify-center p-6">
       <div class="text-center max-w-2xl mx-auto">
