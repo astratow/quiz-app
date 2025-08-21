@@ -6,7 +6,7 @@
         Train your logical thinking and text analysis skills
       </p>
       <p class="text-gray-500">
-        Prepare for exams: SAT, GMAT, A-levels, UKCAT, GRE
+        Prepare for exams.
       </p>
     </div>
 
