@@ -3,6 +3,7 @@
     "id": "same-letter-mc-set-1",
     "instruction": "In these questions, the same letter must fit into both sets of brackets, to complete the word in front of the brackets and begin the word after brackets. Find this letter and mark it on the answer sheet.",
     "example": {
+      "type": "same-letter-mc",
       "text": ["mea [?] able", "si[?] op"],
       "options": ["A", "B", "C", "D", "E"],
       "optionLetters": ["p", "n", "f", "t", "c"],
@@ -64,6 +65,7 @@
     "id": "same-letter-mc-set-2",
     "instruction": "In these questions, the three numbers in each group are related in the same way. Find the number that completes the last grouup and mark it on the answer sheet.",
     "example": {
+      "type": "same-letter-mc",
       "text": ["3 [6] 9", "2 [4] 6", "4 [?] 12"],
       "options": ["A", "B", "C", "D", "E"],
       "optionLetters": ["3", "4", "6", "8", "10"],

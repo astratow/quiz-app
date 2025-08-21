@@ -1,0 +1,131 @@
+[
+  {
+    "id": "same-letter-mc-set-1",
+    "instruction": "In these questions, the same letter must fit into both sets of brackets, to complete the word in front of the brackets and begin the word after brackets. Find this letter and mark it on the answer sheet.",
+    "example": {
+      "type": "same-letter-mc",
+      "text": ["mea [?] able", "si[?] op"],
+      "options": [
+        { "label": "A", "value": "p" },
+        { "label": "B", "value": "n" },
+        { "label": "C", "value": "f" },
+        { "label": "D", "value": "t" },
+        { "label": "E", "value": "c" }
+      ],
+      "correct": "t",
+      "explanation": "The four words are: meat, table, sit, top."
+    },
+    "questions": [
+      {
+        "type": "same-letter-mc",
+        "text": ["dis [?] urt", "muc [?] ole"],
+        "options": [
+          { "label": "A", "value": "p" },
+          { "label": "B", "value": "h" },
+          { "label": "C", "value": "e" },
+          { "label": "D", "value": "s" },
+          { "label": "E", "value": "k" }
+        ],
+        "correct": "h",
+        "explanation": "dish, hurt, much, hole"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["sof [?] in", "bea [?] rap"],
+        "options": [
+          { "label": "A", "value": "d" },
+          { "label": "B", "value": "a" },
+          { "label": "C", "value": "t" },
+          { "label": "D", "value": "b" },
+          { "label": "E", "value": "w" }
+        ],
+        "correct": "t",
+        "explanation": "soft, tin, beat, trap"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["ra [?] ain", "fo [?] oat"],
+        "options": [
+          { "label": "A", "value": "t" },
+          { "label": "B", "value": "d" },
+          { "label": "C", "value": "g" },
+          { "label": "D", "value": "s" },
+          { "label": "E", "value": "p" }
+        ],
+        "correct": "g",
+        "explanation": "rag, gain, fog, goat"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["tra [?] awn", "bu [?] ellow"],
+        "options": [
+          { "label": "A", "value": "p" },
+          { "label": "B", "value": "d" },
+          { "label": "C", "value": "b" },
+          { "label": "D", "value": "s" },
+          { "label": "E", "value": "y" }
+        ],
+        "correct": "y",
+        "explanation": "tray, yawn, buy, yellow"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["ea [?] an", "sor [?] une"],
+        "options": [
+          { "label": "A", "value": "v" },
+          { "label": "B", "value": "y" },
+          { "label": "C", "value": "t" },
+          { "label": "D", "value": "d" },
+          { "label": "E", "value": "g" }
+        ],
+        "correct": "t",
+        "explanation": "eat, tan, sort, tune"
+      },
+      {
+        "type": "same-letter-mc",
+        "text": ["lin [?] itten", "ran [?] ite"],
+        "options": [
+          { "label": "A", "value": "c" },
+          { "label": "B", "value": "m" },
+          { "label": "C", "value": "s" },
+          { "label": "D", "value": "n" },
+          { "label": "E", "value": "k" }
+        ],
+        "correct": "k",
+        "explanation": "link, kitten, rank, kite"
+      }
+    ]
+  },
+  {
+    "id": "same-letter-mc-set-2",
+    "instruction": "In these questions, the three numbers in each group are related in the same way. Find the number that completes the last grouup and mark it on the answer sheet.",
+    "example": {
+      "type": "same-letter-mc",
+      "text": ["3 [6] 9", "2 [4] 6", "4 [?] 12"],
+      "options": [
+        { "label": "A", "value": "3" },
+        { "label": "B", "value": "4" },
+        { "label": "C", "value": "6" },
+        { "label": "D", "value": "8" },
+        { "label": "E", "value": "10" }
+      ],
+      "correct": "4",
+      "explanation": "The four words are: meat, table, sit, top."
+    },
+    "questions": [
+      {
+        "type": "same-letter-mc",
+        "text": ["23 [91] 68", "59 [93] 34", "67 [?] 19"],
+        "options": [
+          { "label": "A", "value": "83" },
+          { "label": "B", "value": "84" },
+          { "label": "C", "value": "85" },
+          { "label": "D", "value": "86" },
+          { "label": "E", "value": "87" }
+        ],
+        "correct": "86",
+        "explanation": ""
+      }
+    ]
+  }
+]
