@@ -1,0 +1,98 @@
+#+title: Verbal Reasoning Quiz – Roadmap & Tasks #+author: #+startup: overview
+
+Overview Refactoring Vue 3 + TS + Tailwind quiz into modular app with routing, views, and clean data model. Target: keep JSON as source until all question types are stable; later consider Supabase.
+
+Milestones ** DONE M0: Project scaffolding
+
+
+
+
+** TODO M1: Routing & Views (current focus) :HIGH:
+
+
+
+
+** TODO M2: Question rendering architecture
+
+
+
+
+** TODO M3: Game state (temporary in view → then store)
+
+
+
+
+** TODO M4: Extract state to store (Pinia)
+
+
+
+
+** TODO M5: Timer & utilities
+
+
+
+
+** TODO M6: Data model & JSON
+
+
+
+
+** TODO M7: Styling & UX polish
+
+
+
+
+** TODO M8: Testing
+
+
+
+
+** TODO M9: Content authoring pipeline (later)
+
+
+
+
+** TODO M10: Persistence (later)
+
+
+
+
+Task Board ** TODO Now
+
+
+
+
+** NEXT Soon
+
+
+
+
+Detailed Checklists ** Quiz.vue (temporary state)
+
+
+
+
+** AnsweredModal.vue
+
+
+
+
+Risks / Notes
+
+Ensure =question.type= matches factory map; otherwise fallback UI
+
+Keep =legacy MC= support until all JSON converted
+
+Guard timer cleanup on route leave
+
+Backlog / Ideas
+
+Keyboard navigation and a11y focus management
+
+Per-question difficulty & adaptive sequencing
+
+Review mode: list questions with answers/explanations after quiz
+
+Theming (light/dark)
+
+Import JSON at runtime (drag & drop)
